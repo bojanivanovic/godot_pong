@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/OpenSans-Light.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Button.gd" type="Script" id=2]
 [ext_resource path="res://2PModeButton.gd" type="Script" id=3]
+[ext_resource path="res://assets/main-menu-1p-start-button.png" type="Texture" id=4]
+[ext_resource path="res://assets/main-menu-2p-start-button.png" type="Texture" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 75
@@ -21,27 +23,38 @@ anchor_bottom = 1.0
 
 [node name="StartButton" type="Button" parent="."]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.197
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.282
 margin_left = -300.5
-margin_top = -169.0
+margin_top = 100.0
 margin_right = 300.5
 margin_bottom = 169.0
+custom_colors/font_color_disabled = Color( 0.921569, 0.45098, 0.0941176, 1 )
 custom_fonts/font = SubResource( 1 )
-text = "START"
 script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="StartButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 4 )
+expand = true
 
 [node name="2PModeButton" type="Button" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 661.0
-margin_top = 750.0
+margin_top = 491.0
 margin_right = -660.0
-margin_bottom = -200.0
+margin_bottom = -429.0
 custom_fonts/font = SubResource( 2 )
-text = "2P MODE"
 script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="2PModeButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 5 )
+expand = true
 
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_Button_pressed"]
 [connection signal="pressed" from="2PModeButton" to="2PModeButton" method="_on_2PModeButton_pressed"]
