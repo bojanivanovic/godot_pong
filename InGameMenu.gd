@@ -15,3 +15,8 @@ func _on_MenuResume_pressed():
 	self.visible = false
 	get_tree().paused = false
 
+func _on_MenuRestart_pressed():
+	self.visible = false
+	get_tree().paused = false
+	get_tree().change_scene("res://Court.tscn")
+

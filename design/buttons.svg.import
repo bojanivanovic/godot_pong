@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/main-menu-1p-start-button.svg-0b5a34ab2b17963a3e6487b705354b7f.stex"
+path="res://.import/buttons.svg-ce49326f3e7d40652820a0117903e0ad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/main-menu-1p-start-button.svg"
-dest_files=[ "res://.import/main-menu-1p-start-button.svg-0b5a34ab2b17963a3e6487b705354b7f.stex" ]
+source_file="res://design/buttons.svg"
+dest_files=[ "res://.import/buttons.svg-ce49326f3e7d40652820a0117903e0ad.stex" ]
 
 [params]
 

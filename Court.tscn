@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://PlayerLeft.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Court.gd" type="Script" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://assets/342759__rhodesmas__score-counter-01.wav" type="AudioStream" id=9]
 [ext_resource path="res://MenuResume.gd" type="Script" id=10]
 [ext_resource path="res://InGameMenu.gd" type="Script" id=11]
+[ext_resource path="res://assets/ingame-menu-resume-button.png" type="Texture" id=12]
+[ext_resource path="res://assets/ingame-menu-quit-button.png" type="Texture" id=13]
+[ext_resource path="res://MenuRestart.gd" type="Script" id=14]
+[ext_resource path="res://assets/ingame-menu-restart-button.png" type="Texture" id=15]
 
 [sub_resource type="DynamicFont" id=4]
 size = 30
@@ -36,7 +40,7 @@ script = ExtResource( 2 )
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.0313726, 0.101961, 0.0392157, 1 )
+color = Color( 0.113725, 0.223529, 0.12549, 1 )
 
 [node name="PlayerLeftScore" type="Label" parent="."]
 anchor_right = 1.0
@@ -130,24 +134,53 @@ script = ExtResource( 11 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 750.0
-margin_top = 300.0
+margin_top = 370.0
 margin_right = -750.0
 margin_bottom = -600.0
-text = "Resume"
 script = ExtResource( 10 )
+
+[node name="TextureRect" type="TextureRect" parent="InGameMenu/MenuResume"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 1.0
+texture = ExtResource( 12 )
+expand = true
+
+[node name="MenuRestart" type="Button" parent="InGameMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 750.0
+margin_top = 510.0
+margin_right = -750.0
+margin_bottom = -460.0
+script = ExtResource( 14 )
+
+[node name="TextureRect" type="TextureRect" parent="InGameMenu/MenuRestart"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 1.0
+texture = ExtResource( 15 )
+expand = true
 
 [node name="MenuQuit" type="Button" parent="InGameMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 750.0
-margin_top = 500.0
+margin_top = 650.0
 margin_right = -750.0
-margin_bottom = -400.0
-text = "Quit to main menu"
+margin_bottom = -320.0
+
+[node name="TextureRect" type="TextureRect" parent="InGameMenu/MenuQuit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 8.0
+texture = ExtResource( 13 )
+expand = true
 
 [connection signal="body_entered" from="GoalLeft" to="." method="_on_GoalLeft_body_entered"]
 [connection signal="body_entered" from="GoalRight" to="." method="_on_GoalRight_body_entered"]
 [connection signal="timeout" from="CountdownTimer" to="." method="_on_CountdownTimer_timeout"]
 [connection signal="draw" from="InGameMenu" to="." method="_on_InGameMenu_draw"]
 [connection signal="pressed" from="InGameMenu/MenuResume" to="InGameMenu" method="_on_MenuResume_pressed"]
+[connection signal="pressed" from="InGameMenu/MenuRestart" to="InGameMenu" method="_on_MenuRestart_pressed"]
 [connection signal="pressed" from="InGameMenu/MenuQuit" to="InGameMenu" method="_on_MenuQuit_pressed"]

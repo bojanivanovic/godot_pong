@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/main-menu-quit-button.svg-513b07889d932970b4ac6c94c879bdf1.stex"
+path="res://.import/ingame-menu-resume-button.png-84123a0c8e46aaedb62a76fef038315f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/main-menu-quit-button.svg"
-dest_files=[ "res://.import/main-menu-quit-button.svg-513b07889d932970b4ac6c94c879bdf1.stex" ]
+source_file="res://assets/ingame-menu-resume-button.png"
+dest_files=[ "res://.import/ingame-menu-resume-button.png-84123a0c8e46aaedb62a76fef038315f.stex" ]
 
 [params]
 
