@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/4359__noisecollector__pongblipf4.wav-700cea8037bf8717a3c5b7ac21118ffa.sample"
+type="AudioStreamWAV"
+uid="uid://d1kvws84vw3j5"
+path="res://.godot/imported/4359__noisecollector__pongblipf4.wav-700cea8037bf8717a3c5b7ac21118ffa.sample"
 
 [deps]
 
 source_file="res://assets/4359__noisecollector__pongblipf4.wav"
-dest_files=[ "res://.import/4359__noisecollector__pongblipf4.wav-700cea8037bf8717a3c5b7ac21118ffa.sample" ]
+dest_files=["res://.godot/imported/4359__noisecollector__pongblipf4.wav-700cea8037bf8717a3c5b7ac21118ffa.sample"]
 
 [params]
 

@@ -1,7 +1,7 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 # set the speed of the player's paddle
-export var playerSpeed = 600
+@export var playerSpeed = 600
 
 func _physics_process(_delta):
 	var playerVelocity = Vector2.ZERO
@@ -12,6 +12,7 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("LeftDown"):
 		playerVelocity.y += playerSpeed
 
-	move_and_slide(playerVelocity)
+	set_velocity(playerVelocity)
+	move_and_slide()
 
 

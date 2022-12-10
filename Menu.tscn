@@ -1,60 +1,77 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://bty44i1hor6gk"]
 
-[ext_resource path="res://assets/OpenSans-Light.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Button.gd" type="Script" id=2]
-[ext_resource path="res://2PModeButton.gd" type="Script" id=3]
-[ext_resource path="res://assets/main-menu-1p-start-button.png" type="Texture" id=4]
-[ext_resource path="res://assets/main-menu-2p-start-button.png" type="Texture" id=5]
-
-[sub_resource type="DynamicFont" id=1]
-size = 75
-outline_size = 1
-outline_color = Color( 0.152941, 0.513726, 0.129412, 1 )
-font_data = ExtResource( 1 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 34
-font_data = ExtResource( 1 )
+[ext_resource type="Script" path="res://Button.gd" id="2"]
+[ext_resource type="Script" path="res://2PModeButton.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://b56fudhmh502i" path="res://assets/main-menu-1p-start-button.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bsen1wfrmfhx6" path="res://assets/main-menu-2p-start-button.png" id="5"]
 
 [node name="Control" type="Control"]
-pause_mode = 2
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="StartButton" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(275, 0)
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.197
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.282
-margin_left = -300.5
-margin_top = 100.0
-margin_right = 300.5
-margin_bottom = 169.0
-custom_colors/font_color_disabled = Color( 0.921569, 0.45098, 0.0941176, 1 )
-custom_fonts/font = SubResource( 1 )
-script = ExtResource( 2 )
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -175.0
+offset_right = 238.0
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+metadata/_edit_group_ = true
 
-[node name="TextureRect" type="TextureRect" parent="StartButton"]
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+process_mode = 3
+anchors_preset = -1
+offset_right = 476.0
+offset_bottom = 112.0
+size_flags_vertical = 3
+script = ExtResource("2")
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/StartButton"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 4 )
-expand = true
+offset_left = -4.0
+offset_right = 4.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4")
 
-[node name="2PModeButton" type="Button" parent="."]
+[node name="2PModeButton" type="Button" parent="VBoxContainer"]
+process_mode = 3
+offset_top = 162.0
+offset_right = 476.0
+offset_bottom = 274.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("3")
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/2PModeButton"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 661.0
-margin_top = 491.0
-margin_right = -660.0
-margin_bottom = -429.0
-custom_fonts/font = SubResource( 2 )
-script = ExtResource( 3 )
+offset_right = -1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5")
 
-[node name="TextureRect" type="TextureRect" parent="2PModeButton"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 5 )
-expand = true
-
-[connection signal="pressed" from="StartButton" to="StartButton" method="_on_Button_pressed"]
-[connection signal="pressed" from="2PModeButton" to="2PModeButton" method="_on_2PModeButton_pressed"]
+[connection signal="pressed" from="VBoxContainer/StartButton" to="VBoxContainer/StartButton" method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/2PModeButton" to="VBoxContainer/2PModeButton" method="_on_2PModeButton_pressed"]

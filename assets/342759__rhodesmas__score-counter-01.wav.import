@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/342759__rhodesmas__score-counter-01.wav-1f9194d25cf1d749fedf4b606fbc5ab1.sample"
+type="AudioStreamWAV"
+uid="uid://cg167e1bfsflf"
+path="res://.godot/imported/342759__rhodesmas__score-counter-01.wav-1f9194d25cf1d749fedf4b606fbc5ab1.sample"
 
 [deps]
 
 source_file="res://assets/342759__rhodesmas__score-counter-01.wav"
-dest_files=[ "res://.import/342759__rhodesmas__score-counter-01.wav-1f9194d25cf1d749fedf4b606fbc5ab1.sample" ]
+dest_files=["res://.godot/imported/342759__rhodesmas__score-counter-01.wav-1f9194d25cf1d749fedf4b606fbc5ab1.sample"]
 
 [params]
 

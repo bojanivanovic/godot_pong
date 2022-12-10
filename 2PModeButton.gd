@@ -11,5 +11,5 @@ func _on_2PModeButton_pressed():
 	# resume the game, this is needed after coming back to the main menu from the game, which pauses it
 	get_tree().paused = false
 	# start a new game
-	get_tree().change_scene("res://Court.tscn")
+	get_tree().change_scene_to_file("res://Court.tscn")
 

@@ -1,181 +1,201 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=18 format=3 uid="uid://c8ye1jalfhhjx"]
 
-[ext_resource path="res://PlayerLeft.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Court.gd" type="Script" id=2]
-[ext_resource path="res://Ball.gd" type="Script" id=3]
-[ext_resource path="res://Ball.tscn" type="PackedScene" id=4]
-[ext_resource path="res://AIOpponent.tscn" type="PackedScene" id=5]
-[ext_resource path="res://PlayerLeft.gd" type="Script" id=6]
-[ext_resource path="res://assets/OpenSans-Light.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://PlayerRight.gd" type="Script" id=8]
-[ext_resource path="res://assets/342759__rhodesmas__score-counter-01.wav" type="AudioStream" id=9]
-[ext_resource path="res://MenuResume.gd" type="Script" id=10]
-[ext_resource path="res://InGameMenu.gd" type="Script" id=11]
-[ext_resource path="res://assets/ingame-menu-resume-button.png" type="Texture" id=12]
-[ext_resource path="res://assets/ingame-menu-quit-button.png" type="Texture" id=13]
-[ext_resource path="res://MenuRestart.gd" type="Script" id=14]
-[ext_resource path="res://assets/ingame-menu-restart-button.png" type="Texture" id=15]
+[ext_resource type="PackedScene" uid="uid://d1vpne6ox0g8e" path="res://PlayerLeft.tscn" id="1"]
+[ext_resource type="Script" path="res://Court.gd" id="2"]
+[ext_resource type="Script" path="res://Ball.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://dejauqrbcqigd" path="res://Ball.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://AIOpponent.tscn" id="5"]
+[ext_resource type="Script" path="res://PlayerLeft.gd" id="6"]
+[ext_resource type="FontFile" uid="uid://jycwp61vfl8c" path="res://assets/OpenSans-Light.ttf" id="7"]
+[ext_resource type="Script" path="res://PlayerRight.gd" id="8"]
+[ext_resource type="AudioStream" uid="uid://cg167e1bfsflf" path="res://assets/342759__rhodesmas__score-counter-01.wav" id="9"]
+[ext_resource type="Script" path="res://MenuResume.gd" id="10"]
+[ext_resource type="Script" path="res://InGameMenu.gd" id="11"]
+[ext_resource type="Texture2D" uid="uid://cf1i1dja2o5qn" path="res://assets/ingame-menu-resume-button.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://c4ls07ljpris3" path="res://assets/ingame-menu-quit-button.png" id="13"]
+[ext_resource type="Script" path="res://MenuRestart.gd" id="14"]
+[ext_resource type="Texture2D" uid="uid://dq6yoj2iveb2w" path="res://assets/ingame-menu-restart-button.png" id="15"]
 
-[sub_resource type="DynamicFont" id=4]
-size = 30
-font_data = ExtResource( 7 )
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(1920, 10)
 
-[sub_resource type="DynamicFont" id=5]
-size = 30
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 50
-font_data = ExtResource( 7 )
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 960, 5 )
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 14.5, 548.5 )
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(29, 1097)
 
 [node name="Court" type="Node"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.113725, 0.223529, 0.12549, 1 )
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.113725, 0.223529, 0.12549, 1)
 
-[node name="PlayerLeftScore" type="Label" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -900.0
-margin_top = 30.0
-custom_fonts/font = SubResource( 4 )
-text = "0"
-align = 1
-
-[node name="OpponentScore" type="Label" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 900.0
-margin_top = 30.0
-custom_fonts/font = SubResource( 5 )
-text = "0"
-align = 1
-
-[node name="TimerLabel" type="Label" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 30.0
-custom_colors/font_color = Color( 0.262745, 0.623529, 0.298039, 1 )
-custom_fonts/font = SubResource( 6 )
-text = "Countdown"
-align = 1
-
-[node name="PlayerLeft" parent="." instance=ExtResource( 1 )]
-position = Vector2( 35, 337 )
-scale = Vector2( 1.5, 1.5 )
-script = ExtResource( 6 )
+[node name="PlayerLeft" parent="." instance=ExtResource("1")]
+position = Vector2(35, 337)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("6")
 playerSpeed = 600
 
-[node name="AIOpponent" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1885, 519 )
-scale = Vector2( 1.5, 1.5 )
+[node name="AIOpponent" parent="." instance=ExtResource("5")]
+position = Vector2(1885, 519)
+scale = Vector2(1.5, 1.5)
 
-[node name="PlayerRight" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1885, 519 )
-scale = Vector2( 1.5, 1.5 )
-script = ExtResource( 8 )
+[node name="PlayerRight" parent="." instance=ExtResource("5")]
+position = Vector2(1885, 519)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("8")
 playerSpeed = 600
 
-[node name="Ball" parent="." instance=ExtResource( 4 )]
-position = Vector2( 960, 539 )
-script = ExtResource( 3 )
+[node name="Ball" parent="." instance=ExtResource("4")]
+position = Vector2(960, 539)
+script = ExtResource("3")
 
 [node name="wall_top" type="StaticBody2D" parent="."]
-position = Vector2( -4, -6 )
+position = Vector2(-4, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_top"]
-position = Vector2( 964, 1 )
-shape = SubResource( 1 )
+position = Vector2(964, 1)
+shape = SubResource("1")
 
 [node name="wall_bottom" type="StaticBody2D" parent="."]
-position = Vector2( -3, 1084 )
+position = Vector2(-3, 1084)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_bottom"]
-position = Vector2( 963, 1 )
-shape = SubResource( 1 )
+position = Vector2(963, 1)
+shape = SubResource("1")
 
 [node name="GoalLeft" type="Area2D" parent="."]
-position = Vector2( -20, 8 )
+position = Vector2(-20, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoalLeft"]
-position = Vector2( 5, 538 )
-shape = SubResource( 3 )
+position = Vector2(5, 538)
+shape = SubResource("3")
 
 [node name="GoalRight" type="Area2D" parent="."]
-position = Vector2( 1928, 1 )
+position = Vector2(1928, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GoalRight"]
-position = Vector2( 8.00002, 547 )
-shape = SubResource( 3 )
+position = Vector2(8.00002, 547)
+shape = SubResource("3")
 
 [node name="CountdownTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 
 [node name="ScoreSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 9 )
+stream = ExtResource("9")
 
 [node name="InGameMenu" type="Control" parent="."]
-pause_mode = 2
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 11 )
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11")
 
 [node name="MenuResume" type="Button" parent="InGameMenu"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 750.0
-margin_top = 370.0
-margin_right = -750.0
-margin_bottom = -600.0
-script = ExtResource( 10 )
+offset_left = 750.0
+offset_top = 370.0
+offset_right = -750.0
+offset_bottom = -600.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10")
 
 [node name="TextureRect" type="TextureRect" parent="InGameMenu/MenuResume"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = 1.0
-texture = ExtResource( 12 )
-expand = true
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12")
 
 [node name="MenuRestart" type="Button" parent="InGameMenu"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 750.0
-margin_top = 510.0
-margin_right = -750.0
-margin_bottom = -460.0
-script = ExtResource( 14 )
+offset_left = 750.0
+offset_top = 510.0
+offset_right = -750.0
+offset_bottom = -460.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("14")
 
 [node name="TextureRect" type="TextureRect" parent="InGameMenu/MenuRestart"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = 1.0
-texture = ExtResource( 15 )
-expand = true
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15")
 
 [node name="MenuQuit" type="Button" parent="InGameMenu"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 750.0
-margin_top = 650.0
-margin_right = -750.0
-margin_bottom = -320.0
+offset_left = 750.0
+offset_top = 650.0
+offset_right = -750.0
+offset_bottom = -320.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="InGameMenu/MenuQuit"]
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = 8.0
-texture = ExtResource( 13 )
-expand = true
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13")
+
+[node name="ScoreLabel" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 50)
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/separation = 400
+alignment = 1
+
+[node name="PlayerLeftScore" type="Label" parent="ScoreLabel"]
+offset_left = 422.0
+offset_top = 7.0
+offset_right = 442.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 35
+text = "0"
+
+[node name="TimerLabel" type="Label" parent="ScoreLabel"]
+offset_left = 842.0
+offset_right = 1077.0
+offset_bottom = 66.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 45
+text = "Countdown"
+
+[node name="OpponentScore" type="Label" parent="ScoreLabel"]
+offset_left = 1477.0
+offset_top = 7.0
+offset_right = 1497.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("7")
+theme_override_font_sizes/font_size = 35
+text = "0"
 
 [connection signal="body_entered" from="GoalLeft" to="." method="_on_GoalLeft_body_entered"]
 [connection signal="body_entered" from="GoalRight" to="." method="_on_GoalRight_body_entered"]
